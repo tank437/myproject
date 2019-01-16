@@ -1,7 +1,7 @@
-import request from '../utils/request';
+import request from 'utils/request';
 
 export async function queryHeroList() {
-  return request('/api/herolist.json');
+  return request('/api/herolist.json','POST');
 }
 export async function getHeroDetails(params) {
   return request('/api/herodetails.json', {
@@ -10,7 +10,7 @@ export async function getHeroDetails(params) {
   });
 }
 export async function queryItem() {
-  return request('/api/item.json','POST');
+  return request('/api/item.json');
 }
 export async function querySummoner() {
   return request('/api/summoner.json');

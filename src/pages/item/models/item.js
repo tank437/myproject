@@ -1,12 +1,12 @@
-import { queryHeroList, getHeroDetails } from '../services/api';
+import { queryItem } from 'services/api';
 export default {
   state: {
-    heros: [],
+    items:[],
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        if (pathname === '/hero') {
+        if (pathname === '/item') {
             dispatch({
                 type: 'fetch'
             })
@@ -21,14 +21,13 @@ export default {
   },
   effects: {
     *fetch({ type, payload }, { put, call, select }) {
-      const herolist = yield call(queryHeroList);
-      const herodetails = yield call(getHeroDetails, { ename: 110 });
+      const item=yield call(queryItem);
       yield put({
         type: 'save',
         payload: {
-          heros: herolist,
+          items: item,
         },
       });
     },
   },
-}
+};
