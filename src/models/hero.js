@@ -23,8 +23,6 @@ export default {
     *fetch({ type, payload }, { put, call, select }) {
       const herolist = yield call(queryHeroList);
       const herodetails = yield call(getHeroDetails, { ename: 110 });
-      console.log('herodetails:'+herodetails);
-      console.log('herolist:'+herolist);
       yield put({
         type: 'save',
         payload: {
