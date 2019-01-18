@@ -1,4 +1,6 @@
-import { queryHeroList, getHeroDetails } from 'services/api';
+//import { queryHeroList, getHeroDetails } from 'services/api';
+import herolistjson from '../../../../mock/herolist.json';
+
 export default {
   state: {
     heros: [],
@@ -22,8 +24,9 @@ export default {
   },
   effects: {
     *fetch({ type, payload }, { put, call, select }) {
-      const herolist = yield request(queryHeroList);
-      const herodetails = yield call(getHeroDetails, { ename: 110 });
+     const herolist = herolistjson;
+     // const herolist = yield call(queryHeroList);
+   //   const herodetails = yield call(getHeroDetails, { ename: 110 });
       yield put({
         type: 'save',
         payload: {

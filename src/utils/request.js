@@ -1,6 +1,6 @@
 import fetch from 'dva/fetch';
 
-export default function request(url, options) {
+export default function request(url, options={}) {
   if(options.method === 'POST'){
       options.headers = {
          Accept: 'application/json',

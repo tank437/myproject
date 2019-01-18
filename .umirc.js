@@ -20,8 +20,12 @@ export default {
           /services\//,
        ],
       },
-    }],
+    },
   ],
+  'umi-plugin-gh-pages',
+  ],
+base: '/myproject/',
+publicPath: '/myproject/',
   alias: {
     utils: path.resolve(__dirname, 'src/utils'),
     services: path.resolve(__dirname, 'src/services'),
